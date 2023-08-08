@@ -1,3 +1,4 @@
+import { getList } from "api/remote";
 import { useEffect, useState } from "react";
 import { Item } from "types/list";
 
@@ -7,8 +8,8 @@ const ListPage = ({}: ListPageProps) => {
   const [list, setList] = useState<Item[]>([]);
   useEffect(() => {
     (async function () {
-      const data = await fetch("/list");
-      setList(await data.json());
+      const data = await getList();
+      setList(data);
     })();
   }, []);
 
