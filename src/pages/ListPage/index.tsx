@@ -1,4 +1,4 @@
-import { getList } from "api/remote";
+import { getList } from "../../api/remote";
 import { useEffect, useState } from "react";
 import { Item } from "types/list";
 

@@ -1,20 +1,13 @@
-import { MemoryRouter } from "react-router-dom";
+import React from "react";
 import { render } from "@testing-library/react";
-import App from "../../App";
+import "@testing-library/jest-dom" 
 import * as remotes from "../../api/remote";
-
-afterAll(() => {
-  jest.clearAllMocks();
-});
+import ListPage from ".";
 
 describe("page test", () => {
   test("list 불러오기", async () => {
     const spyonGetList = jest.spyOn(remotes, "getList");
-    render(
-      <MemoryRouter initialEntries={["list"]}>
-        <App />
-      </MemoryRouter>
-    );
+    render(<ListPage />);
     expect(spyonGetList).toHaveBeenCalled();
   });
 });
