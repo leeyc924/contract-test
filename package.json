@@ -39,6 +39,7 @@
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
+    "@pact-foundation/pact": "^12.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -57,7 +58,7 @@
   "msw": {
     "workerDirectory": "public"
   },
-  "jest" : {
+  "jest": {
     "testEnvironment": "jsdom"
   }
 }

@@ -1,0 +1,112 @@
+{
+  "consumer": {
+    "name": "consumer-list"
+  },
+  "interactions": [
+    {
+      "description": "get list",
+      "providerStates": [
+        {
+          "name": "i want list"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/list"
+      },
+      "response": {
+        "body": [
+          {
+            "id": "0",
+            "modDt": "2023-04-27T08:18:57.454Z",
+            "modId": "leeyc924",
+            "regDt": "2023-04-27T08:18:57.454Z",
+            "regId": "leeyc924",
+            "title": "첫번째 계획"
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 1
+                }
+              ]
+            },
+            "$[*].id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$[*].modDt": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$[*].modId": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$[*].regDt": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$[*].regId": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$[*].title": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {}
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.7",
+      "models": "1.1.9"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "provider-list"
+  }
+}
