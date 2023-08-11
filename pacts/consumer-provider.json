@@ -1,6 +1,6 @@
 {
   "consumer": {
-    "name": "consumer-list"
+    "name": "consumer"
   },
   "interactions": [
     {
@@ -11,6 +11,9 @@
         }
       ],
       "request": {
+        "headers": {
+          "Content-Type": "application/json"
+        },
         "method": "GET",
         "path": "/list"
       },
@@ -107,6 +110,6 @@
     }
   },
   "provider": {
-    "name": "provider-list"
+    "name": "provider"
   }
 }

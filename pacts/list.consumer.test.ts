@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import path from "path";
 import {
   PactV3,
@@ -5,7 +9,7 @@ import {
   SpecificationVersion,
 } from "@pact-foundation/pact";
 import axios from "axios";
-const { eachLike, like, string } = MatchersV3;
+const { eachLike, string } = MatchersV3;
 
 const provider = new PactV3({
   consumer: "consumer",
@@ -24,6 +28,9 @@ describe("get list", () => {
       withRequest: {
         method: "GET",
         path: "/list",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
       willRespondWith: {
         status: 200,
@@ -43,7 +50,9 @@ describe("get list", () => {
 
     await provider.executeTest(async (mockService) => {
       const url = mockService.url ?? "";
-      const res = await axios.get(url + "/list");
+      const res = await axios.get(url + "/list", {
+        headers: { "Content-Type": "application/json" },
+      });
 
       expect(res.data).toStrictEqual([
         {
